@@ -1,0 +1,115 @@
+% Copyright (c) 2015 William Bevington, Callum O'Brien and Alex Pace
+% Permission is granted to copy, distribute and/or modify this document
+% under the terms of the GNU Free Documentation License, Version 1.3
+% or any later version published by the Free Software Foundation;
+% with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+
+\documentclass{article}
+
+\usepackage{amsmath, amssymb, marginnote}
+
+\usepackage{geometry}
+
+\title{PH5}
+\author{William Bevington \and Callum O'Brien \and Alex Pace}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Electromagnetism}
+
+Electromagnetism is all to do with fields. A field is a load of numbers. Vector
+fields are the best fields, and all the rest suck, so we only care about vector
+fields. A uniform field is a field where all the vectors are parallel. In a
+uniform electric field there is half the potential difference halfway between
+the poles, that is to say \[E=V/d\] When working with diagrams describing a
+magnetic field, current traveling into the the page is expressed by a small
+circle with a cross inside it. Current traveling out of the page can be shown by
+a small circle witha dot in its centre.
+
+The "right hand rule" (holding one's hand in a "thumbs up" position) can tell
+the the dirction of a rotating magnetic field (one's fingers) around a wire
+carrying a cur rent in a certain direction (your thumb). The "left hand rule"
+(holding a thumbs up position then pointing the index finger and pointing the
+middle finger perpendicular to the palm) tells you the direction of the
+direction of \textbf{m}ovement of a wire (thu\textbf{m}b) with a magnetic
+\textbf{f}ield (\textbf{f}irst finger) and \textbf{c}urrent (se\textbf{c}ond
+finger).
+
+The magnitude of an electric field can be defined as the ratio of force to the
+relevant property. In this case, current and length of conductor. The angle of
+the wire in the field also affects the force, and hence can be described thus:
+\[F=BIL\sin\left(\theta\right)\] where the units of B are \(NA^{-1}m^{-1} \equiv
+T\)
+
+\subsection{The Magnetic Field of an Infinitely Long Conductor}
+
+Generally, \[\textrm{d}B = \frac{\mu_0 i \sin\theta \textrm{d}s}{4\pi r^2}\]
+Confining this to a plane perpendicular to the current eliminates $\theta$,
+giving \[\textrm{d}B = \frac{\mu_0 i \textrm{d}s}{4\pi r^2}\] hence
+\[B=\frac{\mu_0}{4\pi}\int_0^\infty\frac{R \textrm{d}s}{\left(s^2 +
+R^2\right)^{\frac{3}{2}}}=\frac{\mu_0 I}{2\pi R}\left[\frac{S}{\left(s^2 +
+R^2\right)^{\frac{1}{2}}}\right]_0^\infty=\frac{\mu_0 I}{2\pi R}\] giving the
+magnetic flux density of the field created by a current in an infinitely long
+conductor in a plane perpendicular to the current.
+
+\subsection{Capacitors}
+
+% capacitor circuit diagram symbol pls
+
+Capacitors are a way to store energy/charge. The energy is stored in the
+electric field inbetween the two plates.
+
+\[C=\frac{Q}{V}=\frac{\epsilon A}{d}\] and \[W=\frac{1}{2}QV=\frac{1}{2}CV^2\]
+where \begin{itemize}
+	\item $C$ is capacitance
+	\item $Q$ is charge
+	\item $V$ is potential difference
+	\item $\epsilon$ is the permiativity of free space
+	\item $A$ is the area of the plates
+	\item $d$ is the distance between the plates
+	\item $W$ is the energy stored in the field between the plates
+\end{itemize}
+
+For capacitors in parallel, \[C=\sum_{i=1}^nc_i\] whereas, for capacitors in
+series, \[\frac{1}{C}=\sum_{i=1}^n\frac{1}{c_i}\]
+
+Regarding discharging capacitors, \[V=V_0e^{-\frac{t}{RC}}\]
+\[Q=Q_0e^{-\frac{t}{RC}}\] and \[I=I_0e^{-\frac{t}{RC}}\]
+
+\subsection{Solenoids}
+
+A solenoid is a coil of wire. The magnetic flux density $B$ around a solenoid
+with $n$ coils carrying a current $I$ through a length $l$ of wire is given by
+\[B=\mu_0In\] where $n>\frac{1}{\pi}$.
+
+\subsection{Root Mean Square}
+
+Concerning alternating current, the instantaneous voltage is not a particularly
+useful measure, as it is constantly changing, describing \[V = A \sin
+\left(\omega t\right)\] However, by squaring this, \[V^2 = A^2 \sin^2
+\left(\omega t\right)\] is acquired. By averaging this curve and assigning the
+value to 
+
+\[\bar{V} = \frac{V}{\sqrt{2}}\]
+
+\marginnote{$\bar{V}$ may be written as $V_\textrm{rms}$}
+
+\[\bar{V} = I \times R\]
+
+\[\bar{P} = \bar{V} \times I\]
+
+Don't always use root mean square though, for things like fuses use the peak
+value.
+
+\section{Radioactivity}
+
+Nuclear radiation mostly comes in three types; alpha, beta and gamma. Alpha
+radiation can be distinguished because it will be blocked by pretty much
+anything vaguely substantial. Beta can be distinguised because it can bent with
+magnets. Gamma is bauss.
+
+\end{document}

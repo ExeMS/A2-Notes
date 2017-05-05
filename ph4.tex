@@ -1,0 +1,70 @@
+% Copyright (c) 2015 William Bevington, Callum O'Brien and Alex Pace
+
+% Permission is granted to copy, distribute and/or modify this document
+% under the terms of the GNU Free Documentation License, Version 1.3
+% or any later version published by the Free Software Foundation;
+% with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+
+\documentclass{article}
+
+\usepackage{amsmath}
+
+\usepackage{amssymb}
+
+\usepackage{geometry}
+
+\title{PH4}
+\author{William Bevington \and Callum O'Brien \and Alex Pace}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Simple Harmonic Motion}
+
+\noindent In simple harmonic motion, acceleration is proportional to displacement and opposite in sign;
+
+\[x=x_m\cos(\omega t+\phi)\]
+\[\frac{\partial x}{\partial t}=-\omega x_m\sin(\omega t+\phi)\]
+\[\frac{\partial^2x}{\partial t^2}=-\omega^2x_m\cos(\omega t+\phi)\]
+An example of simple harmonic motion is a mass on a spring. 
+\[T=2\pi\sqrt{\frac{m}{k}}\]
+\begin{itemize}
+	\item $m$ is mass
+	\item $k$ is spring constant
+\end{itemize}
+Pendula aren't but if they are long and the angle is small they pretty much are.
+\[T=2\pi\sqrt{\frac{L}{g}}\]
+\begin{itemize}
+	\item $L$ is length
+\end{itemize}
+
+\subsection{Uniform Circular Motion}
+The projection of a point moving in uniform circular motion on a diameter of the circle in which the motion occurs executes SHM.
+
+\subsection{Relationships between Velocity, Acceleration \& Displacement}
+
+\subsection{Damped Oscillations}
+The energy of an oscillating system is the only factor directly related to the amplitude of the oscillation. If energy is removed from the system over time, such as by friction, the amplitude of the oscillation decreases over time. This is called \textbf{damped harmonic motion}. In damped harmonic motion, frequency and period stay the same, as they are not related to amplitude. In most cases, the damping is caused by an external force which does work in the opposite direction to velocity. Damped systems obey the following;
+\[x(t)=x_me^{-\frac{bt}{2m}}\cos\left(t\sqrt{\left(1-\frac{b}{2m}\right)^2}+\phi\right)\]
+
+\subsection{Driven Oscillations}
+If energy is put into an oscillating system over time, the system is undergoing \textbf{driven oscillation}. Every system has a \textbf{natural frequecy} $\omega_d$ at which it oscillates if the oscillation is driven at this natural frequency, the driving \textbf{resonates} with the oscillation, and things get a bit out of hand.
+
+\[x_m=\frac{F_0}{\sqrt{m^2\left(\omega^2-\omega_d^2\right)^2+b^2\omega_d^2}}\]
+
+\section{Momentum}
+
+\section{Kinetic Theory}
+
+\subsection{Gases}
+
+\[PV = nRT\]
+
+\subsection{Solids}
+
+\[\bar{E} = \frac{3}{2}kT\]
+
+\end{document}

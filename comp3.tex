@@ -1,0 +1,252 @@
+% Copyright (c) 2015 Callum O'Brien
+
+% Permission is granted to copy, distribute and/or modify this document
+% under the terms of the GNU Free Documentation License, Version 1.3
+% or any later version published by the Free Software Foundation;
+% with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+
+\documentclass{article}
+
+\usepackage{amsmath}
+
+\usepackage{amssymb}
+
+\usepackage{amsfonts}
+
+\usepackage{booktabs}
+
+\usepackage{listings}
+
+\usepackage{multirow}
+
+\usepackage{geometry}
+
+\usepackage[toc]{glossaries}
+\makeglossaries
+\include{gloss}
+
+\lstset{language=Pascal}
+
+\begin{document}
+
+\title{COMP3}
+\author{Callum O'Brien}
+\maketitle
+\tableofcontents
+
+\newpage
+
+\section{Databases \& DBMS}
+
+A database is collection of non-redundant data that are stored and which the
+database management system is designed to manipulate. A database management
+system (DBMS) is a software system that enables the definition, creation and
+maintenance of a database and provides controlled access to this database.
+
+In a \textit{file-based approach}, these data are stored in a computer file
+called a flat file. In such a database, the only way to change the record
+structure of these files is to read the file of records using the old file
+structure and save the records to a new file using the new record stucture. The
+file-based approach has many disadvantages;\begin{enumerate}
+    
+    \item \textbf{Data inconsistency:} If there are two adresses for one person,
+        the error in one is not `spotted.  '
+
+    \item \textbf{Data redundancy:} If someone rents a car more than once their
+        details are stored many times
+
+    \item \textbf{Inefficiency:} Typing in the adresses and other details every
+        time a car is rented is time-consuming and takes up storage space
+
+    \item \textbf{Difficult to maintain:} As more records are added the database
+        may need to query and manipulate large amounts of data. This is more
+        difficult using the file-based approach
+        
+    \item \textbf{Program-data dependence:} Because the file structure has not
+        been defined in an accessible way, every computer program has to specify
+        exactly what data fields constitute a record in the file being
+        processed. If the data structure changes, programs also have to be
+        changed to match the new structure.
+
+\end{enumerate} Relational databases provide an advantage over the file-based
+approach. Relational databases contain many \textit{tables} that are linked
+together. This linking is done by \textit{keys} -- these are common pieces of
+information that are shared between tables. In a relational database, the DBMS
+creates and maintains the \textit{data dictionary}. \textit{Data definition
+language} is used to create tables. It records the attributes, data types, validation used and realtionship between entities. It defines which atttributes
+belong to which tables. It also creates users and grants access rights to them.
+DDL commands are;\begin{enumerate}
+
+    \item \textbf{CREATE DATABASE}
+    
+    \item \textbf{CREATE TABLE}
+    
+    \item \textbf{CREATE USER}
+    
+    \item \textbf{GRANT}
+    
+    \item \textbf{DROP}
+
+\end{enumerate}
+
+\textit{Data Manipulation Language} is used to add data to the
+database and manipulate those data. DML commands are\begin{enumerate}
+
+    \item \textbf{INSERT}
+    
+    \item \textbf{UPDATE}
+
+\end{enumerate}
+
+Database schema are different `views' of a database. These can
+be \begin{enumerate}
+
+    \item \textbf{External / User Schema:} the way in which each user sees the
+        database, there may be several different schema representing each user's
+        view.
+    
+    \item \textbf{Conceptual or Logical Schema:} describes the entities,
+        attributes and relationships
+    
+    \item \textbf{Internal Schema:} describes how the data will be stored and
+        how they will be accessed and updated.
+
+\end{enumerate}
+
+\subsection{Entity Relationships}
+
+Entities in a database are tables or users. In an \textit{entity relationship
+diagram}, they are represented by rectangles. Relationships between entities are
+lines connecting entities. They can be;\begin{enumerate}
+
+    \item One-to-one (e.g. $y=x$)
+    
+    \item One-to-many (e.g. $y=\pm\sqrt x$)
+    
+    \item Many-to-one (e.g. $y=\sin x$)
+    
+    \item Many-to-many (e.g. $y^2=1-x^2$)
+
+\end{enumerate}
+
+\subsection{Database Normalisation}
+
+Normalisation is a technique used to produce a normalised set of entities. This
+means that the entities will:\begin{enumerate}
+
+    \item Contain no redundant data
+
+    \item Contain no repeated data
+
+    \item Be able to contain as many or as few tuples as we wish in an entity
+        without requiring us to enter data in another entity as well.
+
+\end{enumerate} The database will now be at its most efficient and there will be
+no risks of compromising the integrity of the data within it.
+
+Databases that are not normalised to third normal form will have problems with
+insertion, deletion and updating anomalies. Database normalisation has been a
+well- developed field since the introduction of Codd's work on normal forms.
+While it's reasonable easy to identify repeating groups or attributes and remove
+these for first normal form, the differences between second and third normal
+form are difficult to secure.
+
+There is a further complication in that repeating groups are understood in
+different ways by different theorists. As a consequence, there is not universal
+agreement as to what constitutes first normal form.
+
+\subsection{Structured Query Language}
+
+SQL is a database language that allows users to create, store, update and
+manipulate data in a database. The first version of SQL was developed at IBM by
+Chamberlin and Boyce in the early 1970s. It was formally standardised in 1986 by
+ANSI.
+
+Almost all modern relational DBMSs use SQL as a standard database language, but
+many use dialects of SQL.
+
+SQL has two subsets, DML and DDL. DDL is used to create the
+database structure (i.e. to define which attributes belong in which tables). It
+also allows you to create users and grant access rights to users.
+
+\begin{table}
+
+    \centering
+
+    \begin{tabular}{ll}
+
+        \toprule
+
+        \multicolumn{2}{c}{DDL} \\
+
+        \midrule
+
+        CREATE DATABASE & Creates a new database \\
+        
+        ALTER DATABASE  & Modifies a database \\
+        
+        CREATE TABLE    & Creates a new table \\
+        
+        ALTER TABLE     & Modifies a table \\
+
+        DROP TABLE      & Deletes a table \\
+        
+        CREATE INDEX    & Creates an index (search key) \\
+        
+        DROP INDEX      & Deletes an index \\
+        
+        GRANT           & Grants permissions on a table \\
+
+        \midrule
+
+        \multicolumn{2}{c}{DML} \\
+
+        \midrule
+        
+        UPDATE          & Updates data in a database \\
+        
+        DELETE          & Deletes data from a database \\
+        
+        INSERT INTO     & Inserts new data into a database \\
+
+        \bottomrule
+
+    \end{tabular}
+
+    \caption{Common DDL and DML commands}
+
+\end{table}
+
+\section{Hashing}
+
+A hash function maps from an input $x$ to an output $y$ in a manner requiring
+(relatively) little processing power, but such that $y$ can not be mapped to $x$
+without significantly more processing. Hash functions are many-to-one; an ideal
+hash function has no inverse. 
+
+A collision occurs when $x_n$ and $x_m$ map to the same $y$. Collisions can be
+resolved by mapping $x_m$ to the next available $y$. This approach can be
+ineffective, as it may ultimately lead to more collisions.
+
+\section{Programming Concepts}
+
+A paradigm is a typical example or pattern of something; a pattern or model.
+
+\section{Pointers}
+
+A pointer stores a memory adress rather than a variable. This can be
+advantageous as it allows dynamic memory allocation; as only the adress is
+stored in stack memory, the memory to store the actual value is in the heap. In
+Pascal, pointers are declared using a caret (\verb!^!). An example of this
+syntax is: 
+
+\begin{lstlisting}
+Var
+  CounterPtr : ^Integer;
+  AveragePtr : ^Real;
+\end{lstlisting} To then store a value in a variable;\begin{lstlisting}
+A^ := 0;
+\end{lstlisting}
+
+\end{document}
+
